@@ -1,1 +1,1 @@
-# products-app
+# Product App with JavaScript OPP
