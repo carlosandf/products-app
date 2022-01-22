@@ -9,10 +9,25 @@ document
         const price = document.getElementById('price').value;
         const year = document.getElementById('year').value;
 
-        const product = new Product(name, price, year);
+        const product = new Product( { name, price, year } );
 
         const ui = new UI()
-        ui.addProduct(product)
+
+        if (name === '' || price === '' || year === '') {
+            e.preventDefault();
+            return ui.showMessage('Complete Fields Please', 'danger')
+        }
+        ui.addProduct(product);
+        ui.resetform();
+        ui.showMessage('Product Added Successfully', 'success');
 
         e.preventDefault();
+    });
+
+document
+    .getElementById('product-list')
+    .addEventListener("click", (e) => {
+        const ui = new UI();
+        ui.deleteProduct(e.target);
+        ui.showMessage('Product Deleted Successfully', 'info');
     });
