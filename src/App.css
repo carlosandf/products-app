@@ -1,5 +1,17 @@
+* {
+    box-sizing: border-box;
+}
 .navbar a {
     padding: .3rem 1.3rem;
+}
+.container {
+    position: relative;
+    display: grid;
+}
+.message {
+    position: fixed;
+    width: 50%;
+    padding: 15px;
 }
 .card-ind {
     display: grid;

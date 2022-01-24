@@ -32,7 +32,7 @@ export class UI {
 
     showMessage(message, cssClass) {
         const div = document.createElement('div');
-        div.className = `alert alert-${cssClass} mt-2`;
+        div.className = `alert alert-${cssClass} mt-2 message`;
         div.appendChild(document.createTextNode(message));
 
         // Showing in DOM
@@ -40,7 +40,7 @@ export class UI {
         const app = document.querySelector('#App');
         container.insertBefore(div, app);
         setTimeout( () => {
-            document.querySelector('.alert').remove()
+            document.querySelector('.alert').remove();
         }, 1800);
 
     }

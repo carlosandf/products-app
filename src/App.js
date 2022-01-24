@@ -29,5 +29,7 @@ document
     .addEventListener("click", (e) => {
         const ui = new UI();
         ui.deleteProduct(e.target);
-        ui.showMessage('Product Deleted Successfully', 'info');
+        if(e.target.name === 'delete') {
+            ui.showMessage('Product Deleted Successfully', 'info');
+        }
     });
